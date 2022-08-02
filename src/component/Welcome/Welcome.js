@@ -43,7 +43,7 @@ class Welcome extends React.Component {
                             <Grid item className={classes.CardSides}>
                                 <Paper className={classes.PaperHeader}>
                                     <Typography component="h2" variant="h5" color="initial" style={{ fontWeight: 400, position: 'relative', top: '5%' }}>
-                                        Welocme to  LoginAs Portal
+                                        Welcome to LoginAs Portal
                                 </Typography>
                                 </Paper>
 

@@ -53,6 +53,11 @@ const Buttons = (props) => {
             provider: 'Keycloak',
             Title: 'Login As Keycloak User',
             icon: ""
+        },
+        {
+            provider: 'PowerServer',
+            Title: 'Login As PowerSever User',
+            icon: ""
         }
     ]
 

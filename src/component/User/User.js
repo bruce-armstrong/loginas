@@ -5,6 +5,7 @@ import AzureUser from '../../container/UserDetails/AzureUser'
 import GoogleUser from '../../container/UserDetails/GoogleUser';
 import FacebokUser from '../../container/UserDetails/FacebookUser';
 import KeycloakUser from '../../container/UserDetails/KeycloakUser';
+import PowerServerUser from '../../container/UserDetails/PowerServerUser';
 import UserCard from './UserCard/UserCard'
 import ProgressBar from '../UI/ProgressBar/ProgressBar'
 
@@ -38,6 +39,9 @@ class User extends React.Component {
                 break;
             case 'Keycloak':
                 KeycloakUser(token).then(userDetails => this.updateUserDetails(userDetails)).catch(err => console.log(err));
+                break;
+            case 'PowerServer':
+                PowerServerUser(token).then(userDetails => this.updateUserDetails(userDetails)).catch(err => console.log(err));
                 break;
             default:
                 break;

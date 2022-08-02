@@ -8,7 +8,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import MicrosoftIcon from 'mdi-react/MicrosoftIcon';
 import GoogleIcon from 'mdi-react/GoogleIcon'
 import EmoticonCoolIcon from 'mdi-react/EmoticonCoolIcon';
-
+import RunFastIcon from 'mdi-react/RunFastIcon';
 
 export default function useSocialLogin() {
 
@@ -21,7 +21,8 @@ export default function useSocialLogin() {
         // { id: "LinkedInIcon", icon: <LinkedInIcon /> },
         { id: "Microsoft", icon: <MicrosoftIcon /> },
         { id: "Google" , icon: <GoogleIcon /> },
-        { id: "Keycloak", icon: <EmoticonCoolIcon/>}
+        { id: "Keycloak", icon: <EmoticonCoolIcon/>},
+        { id: "PowerServer", icon: <RunFastIcon/>}
     ];
 
     //   const [socialMediaValue, setSocialMediaValue] = useState();
@@ -39,6 +40,10 @@ export default function useSocialLogin() {
             case "GitHubIcon":
                 return console.log(id);
             case "LinkedInIcon":
+                return console.log(id);
+            case "EmotionCoolIcon":
+                return console.log(id);
+            case "RunFastIcon":
                 return console.log(id);
             default:
                 return console.log(id);
