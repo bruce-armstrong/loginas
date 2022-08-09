@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Welcome from '../../component/Welcome/Welcome';
-import classes from './Layout.module.css';
-import AuthContext from '../../context/auth-context';
 import AzureAuthUrl from '../AuthEndpointSetup/Azure';
 import GoogleAuthUrl from '../AuthEndpointSetup/Google';
 import FacebookAuthUrl from '../AuthEndpointSetup/Facebook';
@@ -12,8 +10,6 @@ import FacebookToken from '../TokenEndpointSetup/FacebookToken';
 import GoogleToken from '../TokenEndpointSetup/GoogleToken';
 import KeycloakToken from '../TokenEndpointSetup/KeycloakToken';
 import PowerServerToken from '../TokenEndpointSetup/PowerServerToken';
-
-
 
 class Layout extends Component {
 
@@ -66,10 +62,11 @@ class Layout extends Component {
             case 'Keycloak':
                 KeycloakToken(code).then(token => this.updateAuthDetails(token, provider)).catch(err => console.log(err));
                 break;
-            case 'Keycloak':
+            case 'PowerServer':
                 PowerServerToken(code).then(token => this.updateAuthDetails(token, provider)).catch(err => console.log(err));
                 break;
             default:
+                console.log('Unknown Provider ' + provider)
                 break;
         }
     }

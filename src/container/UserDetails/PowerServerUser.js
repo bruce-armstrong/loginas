@@ -7,7 +7,7 @@ const PowerServerUser = async (token) => {
         }
     })
     const res_obj = await res.json();
-    const me = JSON.parse(res_obj.body);
+    const me = JSON.parse(JSON.stringify(res_obj));
     console.log(me);
     if (me.sub) {
         userProvider = {

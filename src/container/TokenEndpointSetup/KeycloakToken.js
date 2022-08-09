@@ -1,4 +1,4 @@
-import { KEYCLOAK_ID, KEYCLOAK_SECRET, REDIRECT_URI } from '../../config/env';
+import { KEYCLOAK_ID, REDIRECT_URI } from '../../config/env';
 import queryString from 'query-string';
 import { CODE_VERIFIER } from '../../config/PCKEConfigs';
 import URL from 'url';

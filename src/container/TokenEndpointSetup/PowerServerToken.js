@@ -1,4 +1,4 @@
-import { POWERSERVER_ID, POWERSERVER_SECRET, REDIRECT_URI } from '../../config/env';
+import { POWERSERVER_ID, REDIRECT_URI } from '../../config/env';
 import queryString from 'query-string';
 import { CODE_VERIFIER } from '../../config/PCKEConfigs';
 import URL from 'url';
@@ -10,12 +10,11 @@ const PowerServerToken = async (code) => {
         grant_type: 'authorization_code',
         redirect_uri: REDIRECT_URI,
         code_verifier: CODE_VERIFIER,
-        state: JSON.stringify({ provider: 'PowerServer' }),
-        proxyBaseUrl: `https://172.16.0.154:5000/connect/token`
+        state: JSON.stringify({ provider: 'PowerServer' })
     }
 
     const post_data = queryString.stringify(params);
-    let parsedUrl = URL.parse(`http://localhost:4000`, true);
+    let parsedUrl = URL.parse(`https://172.16.0.154:5000/connect/token`, true);
 
     let realHeaders = {};
     realHeaders['Host'] = parsedUrl.host;
@@ -35,10 +34,10 @@ const PowerServerToken = async (code) => {
         body: post_data
     }, options);
 
-    let response = await fetch(`http://localhost:4000`, payload)
+    let response = await fetch(`https://172.16.0.154:5000/connect/token`, payload)
 
     let res = await response.json();
-    const token_object = JSON.parse(res.body);
+    const token_object = JSON.parse(JSON.stringify(res));
 
     return token_object.access_token;
 

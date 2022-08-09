@@ -3,7 +3,6 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import image from '../../assets/funny-programmer-status-update.jpg';
-import Buttons from '../UI/Buttons/Buttons';
 import Login from '../Login/Login'
 
 import User from '../User/User'
@@ -11,15 +10,8 @@ import { Route } from 'react-router-dom';
 import ProgressBar from '../UI/ProgressBar/ProgressBar'
 import classes from './Welcome.module.css'
 
-
-
 class Welcome extends React.Component {
 
-    // console.log(props);
-    // const token = window.localStorage.getItem('token');
-    // // console.log(token);
-    // if(token !== null) {
-    // props.history.push('/welcome/user');
     state = {
         token: window.localStorage.getItem('token')
     }

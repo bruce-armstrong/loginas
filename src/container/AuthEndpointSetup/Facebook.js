@@ -1,7 +1,5 @@
 import { FACEBOOK_ID, REDIRECT_URI } from '../../config/env';
 import queryString from 'query-string';
-import { CODE_CHALLENGE_METHOD, CODE_CHALLENGE } from '../../config/PCKEConfigs'
-
 
 const Facebook = () => {
     return queryString.stringifyUrl({

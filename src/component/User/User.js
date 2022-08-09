@@ -1,6 +1,4 @@
-import React, { useContext } from 'react';
-import classes from './User.module.css';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import AzureUser from '../../container/UserDetails/AzureUser'
 import GoogleUser from '../../container/UserDetails/GoogleUser';
 import FacebokUser from '../../container/UserDetails/FacebookUser';
@@ -44,6 +42,7 @@ class User extends React.Component {
                 PowerServerUser(token).then(userDetails => this.updateUserDetails(userDetails)).catch(err => console.log(err));
                 break;
             default:
+                console.log("Unknown Provider");
                 break;
         }
     }

@@ -1,6 +1,5 @@
 import { GOOGLE_ID, GOOGLE_SECRET, REDIRECT_URI } from '../../config/env';
 import queryString from 'query-string';
-import { CODE_VERIFIER } from '../../config/PCKEConfigs';
 import URL from 'url';
 
 const GoogleToken = async (code) => {
